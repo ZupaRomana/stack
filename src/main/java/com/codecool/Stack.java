@@ -54,6 +54,10 @@ public class Stack<Element> {
         }
     }
 
+    public Element peek() {
+        return top == null ? null : top.element;
+    }
+
     private class Node<E> {
 
         private E element;
