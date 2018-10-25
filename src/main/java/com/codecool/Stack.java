@@ -19,4 +19,13 @@ public class Stack<Element> {
     public int getSize() {
         return size;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        for (Element e : container) {
+            sb.append(" ").append(e);
+        }
+        return sb.toString();
+    }
 }
