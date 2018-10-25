@@ -4,8 +4,7 @@ public class Stack<Element> {
 
     private int capacity;
     private int size;
-    private Element top;
-    private Element beforeTop;
+    private Node<Element> top;
 
     public Stack(int capacity) throws IllegalArgumentException {
         if (wrongSize(capacity)) {
@@ -30,5 +29,16 @@ public class Stack<Element> {
 
     public int getFreeSpace() {
         return capacity - size;
+    }
+
+    private class Node<E> {
+
+        private E element;
+        private Node<E> previousNode;
+
+        Node(E element, Node<E> previousNode) {
+            this.element = element;
+            this.previousNode = previousNode;
+        }
     }
 }
