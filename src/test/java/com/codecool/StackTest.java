@@ -100,4 +100,16 @@ class StackTest {
             stack.push("StackOverflow");
         });
     }
+
+    @Test
+    void returnsValidFreeSpace_when_stackFull() {
+        Stack<String> stack = new Stack<>(2);
+        stack.push(" ");
+        stack.push(" ");
+
+        int expected = 0;
+        int actual = stack.getFreeSpace();
+
+        assertEquals(expected, actual);
+    }
 }
