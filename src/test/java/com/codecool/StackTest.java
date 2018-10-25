@@ -72,4 +72,17 @@ class StackTest {
 
         assertEquals(expected, actual);
     }
+
+    @Test
+    void hasValidSize_when_pushedMaxItems() {
+        Stack<String> stack = new Stack<>(5);
+        for (int i = 0; i < 5; i++) {
+            stack.push("example");
+        }
+
+        int expected = 5;
+        int actual = stack.getSize();
+
+        assertEquals(expected, actual);
+    }
 }
