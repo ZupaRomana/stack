@@ -23,4 +23,8 @@ public class Stack<Element> {
     public int getCapacity() {
         return capacity;
     }
+
+    public int getSize() {
+        return size;
+    }
 }
