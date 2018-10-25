@@ -18,4 +18,14 @@ class StackTest {
             new Stack<String>(30);
         });
     }
+
+    @Test
+    void returnsValidSize() {
+        Stack<String> stack = new Stack<>(19);
+
+        int expected = 19;
+        int actual = stack.getSize();
+
+        assertEquals(expected, actual);
+    }
 }
