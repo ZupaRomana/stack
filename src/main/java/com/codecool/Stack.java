@@ -31,6 +31,11 @@ public class Stack<Element> {
         return capacity - size;
     }
 
+    public void push(Element element) {
+        top = top == null ? new Node<>(element, null) : new Node<>(element, top);
+        size++;
+    }
+
     private class Node<E> {
 
         private E element;
