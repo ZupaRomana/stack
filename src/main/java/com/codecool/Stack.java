@@ -42,6 +42,11 @@ public class Stack<Element> {
         }
     }
 
+    public Element pop() {
+        size--;
+        return top.element;
+    }
+
     private class Node<E> {
 
         private E element;
