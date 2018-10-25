@@ -112,4 +112,16 @@ class StackTest {
 
         assertEquals(expected, actual);
     }
+
+    @Test
+    void returnsElement_when_popOnLastItem() {
+        Stack<String> stack = new Stack<>(2);
+        stack.push("ex");
+        stack.push("example");
+
+        String expected = "example";
+        String actual = stack.pop();
+
+        assertEquals(expected, actual);
+    }
 }
