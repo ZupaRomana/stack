@@ -85,4 +85,18 @@ class StackTest {
 
         assertEquals(expected, actual);
     }
+
+    @Test
+    void throwsException_when_pushedMoreThanSizeItems() {
+        Stack<String> stack = new Stack<>(10);
+        int capacity = stack.getCapacity();
+
+        for (int i = 0; i < capacity; i++) {
+            stack.push("example");
+        }
+
+        assertThrows(StackOverflow.class, () -> {
+            stack.push("StackOverflow");
+        });
+    }
 }
