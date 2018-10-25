@@ -146,4 +146,15 @@ class StackTest {
 
         assertEquals(expected, actual);
     }
+
+    @Test
+    void peeksValidItem() {
+        Stack<String> stack = new Stack<>(3);
+        stack.push("example");
+
+        String expected = "example";
+        String actual = stack.peek();
+
+        assertEquals(expected, actual);
+    }
 }
