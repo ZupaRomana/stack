@@ -38,4 +38,14 @@ class StackTest {
 
         assertEquals(expected, actual);
     }
+
+    @Test
+    void returnsValidNumOfFreeSpaces() {
+        Stack<String> stack = new Stack<>(5);
+
+        int expected = 5;
+        int actual = stack.getFreeSpace();
+
+        assertEquals(expected, actual);
+    }
 }
