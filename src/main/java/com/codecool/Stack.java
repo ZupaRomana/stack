@@ -2,21 +2,25 @@ package com.codecool;
 
 public class Stack<Element> {
 
+    private int capacity;
     private int size;
+    private Element top;
+    private Element beforeTop;
 
-    public Stack(int size) throws IllegalArgumentException {
-        if (wrongSize(size)) {
+    public Stack(int capacity) throws IllegalArgumentException {
+        if (wrongSize(capacity)) {
             throw new IllegalArgumentException();
         } else {
-            this.size = size;
+            this.capacity = capacity;
+            size = 0;
         }
     }
 
-    private boolean wrongSize(int size) {
-        return size < 0;
+    private boolean wrongSize(int capacity) {
+        return capacity < 0;
     }
 
-    public int getSize() {
-        return size;
+    public int getCapacity() {
+        return capacity;
     }
 }

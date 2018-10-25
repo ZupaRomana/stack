@@ -24,7 +24,7 @@ class StackTest {
         Stack<String> stack = new Stack<>(19);
 
         int expected = 19;
-        int actual = stack.getSize();
+        int actual = stack.getCapacity();
 
         assertEquals(expected, actual);
     }
