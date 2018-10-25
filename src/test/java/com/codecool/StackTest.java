@@ -1,6 +1,7 @@
 package com.codecool;
 
 import com.codecool.exceptions.StackOverflow;
+import com.codecool.exceptions.StackUnderflow;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -123,5 +124,13 @@ class StackTest {
         String actual = stack.pop();
 
         assertEquals(expected, actual);
+    }
+
+    @Test
+    void throwsException_when_stackIsEmpty() {
+        Stack<String> stack = new Stack<>(5);
+        assertThrows(StackUnderflow.class, () -> {
+            stack.pop();
+        });
     }
 }
