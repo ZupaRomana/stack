@@ -27,4 +27,8 @@ public class Stack<Element> {
     public int getSize() {
         return size;
     }
+
+    public int getFreeSpace() {
+        return capacity - size;
+    }
 }
