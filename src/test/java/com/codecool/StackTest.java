@@ -157,4 +157,16 @@ class StackTest {
 
         assertEquals(expected, actual);
     }
+
+    @Test
+    void hasSameSize_when_peekInvoked() {
+        Stack<String> stack = new Stack<>(2);
+        stack.push("example");
+        stack.peek();
+
+        int expected = 1;
+        int actual = stack.getSize();
+
+        assertEquals(expected, actual);
+    }
 }
