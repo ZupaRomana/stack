@@ -11,4 +11,11 @@ class StackTest {
             new Stack<String>(-1);
         });
     }
+
+    @Test
+    void doesNotThrowException_when_goodCapacityPassed() {
+        assertDoesNotThrow(() -> {
+            new Stack<String>(30);
+        });
+    }
 }
