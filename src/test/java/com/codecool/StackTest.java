@@ -28,4 +28,14 @@ class StackTest {
 
         assertEquals(expected, actual);
     }
+
+    @Test
+    void returnsListInStringType() {
+        Stack<String> stack = new Stack<>(3);
+
+        String expected = " null null null";
+        String actual = stack.toString();
+
+        assertEquals(expected, actual);
+    }
 }
