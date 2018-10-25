@@ -1,6 +1,7 @@
 package com.codecool;
 
 import com.codecool.exceptions.StackOverflow;
+import com.codecool.exceptions.StackUnderflow;
 
 public class Stack<Element> {
 
@@ -43,8 +44,14 @@ public class Stack<Element> {
     }
 
     public Element pop() {
-        size--;
-        return top.element;
+        if (top == null) {
+            throw new StackUnderflow();
+        } else {
+            size--;
+            Element result = top.element;
+            top = top.previousNode;
+            return result;
+        }
     }
 
     private class Node<E> {

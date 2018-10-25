@@ -133,4 +133,17 @@ class StackTest {
             stack.pop();
         });
     }
+
+    @Test
+    void returnsValidObject_when_popedMoreTimes() {
+        Stack<String> stack = new Stack<>(4);
+        stack.push("1");
+        stack.push("2");
+
+        String expected = "1";
+        stack.pop();
+        String actual = stack.pop();
+
+        assertEquals(expected, actual);
+    }
 }
