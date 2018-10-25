@@ -8,7 +8,7 @@ public class Stack<Element> {
         if (wrongSize(size)) {
             throw new IllegalArgumentException();
         } else {
-
+            this.size = size;
         }
     }
 
