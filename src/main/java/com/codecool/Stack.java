@@ -1,5 +1,7 @@
 package com.codecool;
 
+import com.codecool.exceptions.StackOverflow;
+
 public class Stack<Element> {
 
     private int capacity;
@@ -32,8 +34,12 @@ public class Stack<Element> {
     }
 
     public void push(Element element) {
-        top = top == null ? new Node<>(element, null) : new Node<>(element, top);
-        size++;
+        if (capacity == size) {
+            throw new StackOverflow();
+        } else {
+            top = top == null ? new Node<>(element, null) : new Node<>(element, top);
+            size++;
+        }
     }
 
     private class Node<E> {

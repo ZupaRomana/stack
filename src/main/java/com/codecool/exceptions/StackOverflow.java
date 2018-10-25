@@ -1,6 +1,6 @@
 package com.codecool.exceptions;
 
-public class StackOverflow extends Exception {
+public class StackOverflow extends RuntimeException {
     public StackOverflow() {
         super();
     }
